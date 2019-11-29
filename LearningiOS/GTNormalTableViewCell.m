@@ -13,6 +13,7 @@
 @property(nonatomic, strong, readwrite) UILabel *commentLabel;
 @property(nonatomic, strong, readwrite) UILabel *timeLabel;
 @property(nonatomic, strong, readwrite) UIImageView *rightImageView;
+@property(nonatomic, strong, readwrite) UIButton *deleteButton;
 
 @end
 
@@ -54,10 +55,22 @@
             self.rightImageView.contentMode = UIViewContentModeScaleAspectFit;
             self.rightImageView;
         })];
+        [self.contentView addSubview:({
+            self.deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(290, 80, 30, 20)];
+            [self.deleteButton setTitle:@"x" forState:UIControlStateNormal];
+            [self.deleteButton setTitle:@"v" forState:UIControlStateHighlighted];
+            [self.deleteButton addTarget:self action:@selector(deleteButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+            self.deleteButton.backgroundColor = [UIColor redColor];
+            self.deleteButton;
+        })];
     }
     return self;
 }
-
+- (void) deleteButtonClicked{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewCell:clickDeleteButton:)]) {
+        [self.delegate tableViewCell:self clickDeleteButton:self.deleteButton];
+    }
+}
 - (void) layoutTableViewCell{
     self.titleLabel.text = @"this is the title";
     self.sourceLabel.text=@"from ccav";

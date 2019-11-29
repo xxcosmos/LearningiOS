@@ -8,8 +8,9 @@
 
 #import "ViewController.h"
 #import "GTNormalTableViewCell.h"
+#import "GTDetailViewController.h"
 
-@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate,GTNormalTableViewCellDelegate>
 
 @end
 
@@ -34,13 +35,13 @@
     tableView.dataSource = self;
     tableView.delegate = self;
     
-//    UIView *view = [[UIView alloc] init];
-//    view.backgroundColor = [UIColor greenColor];
-//    view.frame = CGRectMake(100, 100, 100, 100);
-//    [self.view addSubview:view];
-//
-//    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushController)];
-//    [view addGestureRecognizer:tapGesture];
+    //    UIView *view = [[UIView alloc] init];
+    //    view.backgroundColor = [UIColor greenColor];
+    //    view.frame = CGRectMake(100, 100, 100, 100);
+    //    [self.view addSubview:view];
+    //
+    //    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushController)];
+    //    [view addGestureRecognizer:tapGesture];
 }
 
 //- (void)pushController{
@@ -57,7 +58,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIViewController *controller = [[UIViewController alloc] init];
+    GTDetailViewController *controller = [[GTDetailViewController alloc] init];
     controller.title = [NSString stringWithFormat:@"%@",@(indexPath.row)];
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -66,11 +67,14 @@
     GTNormalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
     if (!cell) {
         cell = [[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+        cell.delegate =self;
     }
     [cell layoutTableViewCell];
     return cell;
 }
-
+- (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton {
+    NSLog(@"hellllllll");
+}
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 20;
 }

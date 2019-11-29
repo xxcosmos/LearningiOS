@@ -14,6 +14,8 @@
 		6E395CF9238CDE8B00A44342 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E395CF8238CDE8B00A44342 /* Assets.xcassets */; };
 		6E395CFC238CDE8B00A44342 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E395CFA238CDE8B00A44342 /* LaunchScreen.storyboard */; };
 		6E395CFF238CDE8B00A44342 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E395CFE238CDE8B00A44342 /* main.m */; };
+		6E4B035B2390EA01006903AD /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4B035A2390EA01006903AD /* GTDetailViewController.m */; };
+		6E4B035E2390F500006903AD /* GTDeleteButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4B035D2390F500006903AD /* GTDeleteButtonView.m */; };
 		6E7E0859238E431F00A6E71E /* GTVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E0858238E431F00A6E71E /* GTVideoViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,10 @@
 		6E395CFB238CDE8B00A44342 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E395CFD238CDE8B00A44342 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E395CFE238CDE8B00A44342 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6E4B03592390EA01006903AD /* GTDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDetailViewController.h; sourceTree = "<group>"; };
+		6E4B035A2390EA01006903AD /* GTDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDetailViewController.m; sourceTree = "<group>"; };
+		6E4B035C2390F500006903AD /* GTDeleteButtonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDeleteButtonView.h; sourceTree = "<group>"; };
+		6E4B035D2390F500006903AD /* GTDeleteButtonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDeleteButtonView.m; sourceTree = "<group>"; };
 		6E7E0857238E431F00A6E71E /* GTVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoViewController.h; sourceTree = "<group>"; };
 		6E7E0858238E431F00A6E71E /* GTVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +85,10 @@
 				6E395CFE238CDE8B00A44342 /* main.m */,
 				6E3277D2238FE9A1000DC454 /* GTNormalTableViewCell.h */,
 				6E3277D3238FE9A1000DC454 /* GTNormalTableViewCell.m */,
+				6E4B03592390EA01006903AD /* GTDetailViewController.h */,
+				6E4B035A2390EA01006903AD /* GTDetailViewController.m */,
+				6E4B035C2390F500006903AD /* GTDeleteButtonView.h */,
+				6E4B035D2390F500006903AD /* GTDeleteButtonView.m */,
 			);
 			path = LearningiOS;
 			sourceTree = "<group>";
@@ -156,6 +166,8 @@
 				6E395CEE238CDE8800A44342 /* AppDelegate.m in Sources */,
 				6E395CFF238CDE8B00A44342 /* main.m in Sources */,
 				6E3277D4238FE9A1000DC454 /* GTNormalTableViewCell.m in Sources */,
+				6E4B035E2390F500006903AD /* GTDeleteButtonView.m in Sources */,
+				6E4B035B2390EA01006903AD /* GTDetailViewController.m in Sources */,
 				6E3277D1238FE212000DC454 /* GTRecommendViewController.m in Sources */,
 				6E7E0859238E431F00A6E71E /* GTVideoViewController.m in Sources */,
 			);
