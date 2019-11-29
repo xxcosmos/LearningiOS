@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "GTNormalTableViewCell.h"
 #import "GTDetailViewController.h"
+#import "GTDeleteButtonView.h"
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate,GTNormalTableViewCellDelegate>
 
@@ -73,7 +74,11 @@
     return cell;
 }
 - (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton {
-    NSLog(@"hellllllll");
+    GTDeleteButtonView *deleteButtonView = [[GTDeleteButtonView alloc] initWithFrame:self.view.bounds];
+    CGRect rect = [tableViewCell convertRect:deleteButton.frame toView:nil];
+    [deleteButtonView showDeleteViewFromPoint:rect.origin clickBlock:^{
+        NSLog(@"d");
+    }];
 }
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 20;
