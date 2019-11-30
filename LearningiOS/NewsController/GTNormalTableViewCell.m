@@ -7,6 +7,7 @@
 //
 
 #import "GTNormalTableViewCell.h"
+#import "GTListItem.h"
 @interface GTNormalTableViewCell ()
 @property(nonatomic, strong, readwrite) UILabel *titleLabel;
 @property(nonatomic, strong, readwrite) UILabel *sourceLabel;
@@ -75,7 +76,7 @@
         [self.delegate tableViewCell:self clickDeleteButton:self.deleteButton];
     }
 }
-- (void) layoutTableViewCell{
+- (void) layoutTableViewCellWithItem:(GTListItem *)item{
     self.titleLabel.text = @"this is the title";
     self.sourceLabel.text=@"from ccav";
     [self.sourceLabel sizeToFit];

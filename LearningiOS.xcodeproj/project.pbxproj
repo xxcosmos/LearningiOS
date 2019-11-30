@@ -18,6 +18,7 @@
 		6E4B035E2390F500006903AD /* GTDeleteButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4B035D2390F500006903AD /* GTDeleteButtonView.m */; };
 		6E7E0859238E431F00A6E71E /* GTVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E0858238E431F00A6E71E /* GTVideoViewController.m */; };
 		6EAD51C12392459B008E7B51 /* GTListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD51C02392459B008E7B51 /* GTListLoader.m */; };
+		6EAD51C7239253CC008E7B51 /* GTListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD51C6239253CC008E7B51 /* GTListItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		6E7E0858238E431F00A6E71E /* GTVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoViewController.m; sourceTree = "<group>"; };
 		6EAD51BF2392459B008E7B51 /* GTListLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListLoader.h; sourceTree = "<group>"; };
 		6EAD51C02392459B008E7B51 /* GTListLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListLoader.m; sourceTree = "<group>"; };
+		6EAD51C5239253CC008E7B51 /* GTListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListItem.h; sourceTree = "<group>"; };
+		6EAD51C6239253CC008E7B51 /* GTListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +77,10 @@
 		6E395CEB238CDE8800A44342 /* LearningiOS */ = {
 			isa = PBXGroup;
 			children = (
+				6EAD51C32392460F008E7B51 /* loader */,
+				6EAD51C2239245AF008E7B51 /* NewsController */,
 				6E395CEC238CDE8800A44342 /* AppDelegate.h */,
 				6E395CED238CDE8800A44342 /* AppDelegate.m */,
-				6EAD51C2239245AF008E7B51 /* NewsView */,
 				6E7E0857238E431F00A6E71E /* GTVideoViewController.h */,
 				6E7E0858238E431F00A6E71E /* GTVideoViewController.m */,
 				6E3277CF238FE212000DC454 /* GTRecommendViewController.h */,
@@ -85,15 +89,14 @@
 				6E395CF8238CDE8B00A44342 /* Assets.xcassets */,
 				6E395CFD238CDE8B00A44342 /* Info.plist */,
 				6E395CFE238CDE8B00A44342 /* main.m */,
-				6EAD51BF2392459B008E7B51 /* GTListLoader.h */,
-				6EAD51C02392459B008E7B51 /* GTListLoader.m */,
 			);
 			path = LearningiOS;
 			sourceTree = "<group>";
 		};
-		6EAD51C2239245AF008E7B51 /* NewsView */ = {
+		6EAD51C2239245AF008E7B51 /* NewsController */ = {
 			isa = PBXGroup;
 			children = (
+				6EAD51C42392539D008E7B51 /* Model */,
 				6E395CF2238CDE8800A44342 /* GTNewsViewController.h */,
 				6E395CF3238CDE8800A44342 /* GTNewsViewController.m */,
 				6E3277D2238FE9A1000DC454 /* GTNormalTableViewCell.h */,
@@ -103,7 +106,25 @@
 				6E4B035C2390F500006903AD /* GTDeleteButtonView.h */,
 				6E4B035D2390F500006903AD /* GTDeleteButtonView.m */,
 			);
-			path = NewsView;
+			path = NewsController;
+			sourceTree = "<group>";
+		};
+		6EAD51C32392460F008E7B51 /* loader */ = {
+			isa = PBXGroup;
+			children = (
+				6EAD51BF2392459B008E7B51 /* GTListLoader.h */,
+				6EAD51C02392459B008E7B51 /* GTListLoader.m */,
+			);
+			path = loader;
+			sourceTree = "<group>";
+		};
+		6EAD51C42392539D008E7B51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6EAD51C5239253CC008E7B51 /* GTListItem.h */,
+				6EAD51C6239253CC008E7B51 /* GTListItem.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +199,7 @@
 				6E395CF4238CDE8800A44342 /* GTNewsViewController.m in Sources */,
 				6E395CEE238CDE8800A44342 /* AppDelegate.m in Sources */,
 				6E395CFF238CDE8B00A44342 /* main.m in Sources */,
+				6EAD51C7239253CC008E7B51 /* GTListItem.m in Sources */,
 				6E3277D4238FE9A1000DC454 /* GTNormalTableViewCell.m in Sources */,
 				6EAD51C12392459B008E7B51 /* GTListLoader.m in Sources */,
 				6E4B035E2390F500006903AD /* GTDeleteButtonView.m in Sources */,
