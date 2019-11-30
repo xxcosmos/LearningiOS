@@ -1,23 +1,24 @@
 //
-//  ViewController.m
+//  GTNewsViewController.m
 //  LearningiOS
 //
 //  Created by 张啸宇 on 2019/11/26.
 //  Copyright © 2019 xiaoyuu. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GTNewsViewController.h"
 #import "GTNormalTableViewCell.h"
 #import "GTDetailViewController.h"
 #import "GTDeleteButtonView.h"
 
-@interface ViewController ()<UITableViewDataSource,UITableViewDelegate,GTNormalTableViewCellDelegate>
+/// 自解释的注释
+@interface GTNewsViewController ()<UITableViewDataSource,UITableViewDelegate,GTNormalTableViewCellDelegate>
 @property(nonatomic, strong, readwrite)UITableView *tableView;
 @property(nonatomic, strong, readwrite)NSMutableArray *dataArray;
 
 @end
 
-@implementation ViewController
+@implementation GTNewsViewController
 - (instancetype)init
 {
     self = [super init];
@@ -32,6 +33,7 @@
     }
     return self;
 }
+#pragma mark - viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -60,6 +62,10 @@
 //    [self.navigationController pushViewController:viewController animated:YES];
 //
 //}
+
+/// 方法的注释
+/// @param tableView you should know what it means
+/// @param indexPath just the index path
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
 }

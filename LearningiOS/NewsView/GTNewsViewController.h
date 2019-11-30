@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GTNewsViewController.h
 //  LearningiOS
 //
 //  Created by 张啸宇 on 2019/11/26.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface GTNewsViewController : UIViewController
 
 
 @end

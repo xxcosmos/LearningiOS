@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "GTNewsViewController.h"
 #import "GTVideoViewController.h"
 #import "GTRecommendViewController.h"
 
@@ -20,18 +20,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    ViewController *viewController = [[ViewController alloc] init];
+    GTNewsViewController *viewController = [[GTNewsViewController alloc] init];
     GTVideoViewController *videoController = [[GTVideoViewController alloc]init];
     GTRecommendViewController * recommendController = [[GTRecommendViewController alloc]init];
     
    
     
-    UIViewController *controller4 = [[UIViewController alloc]init];
-    controller4.view.backgroundColor = [UIColor blackColor];
-    controller4.tabBarItem.title = @"我的";
+    UIViewController *mineViewController = [[UIViewController alloc]init];
+    mineViewController.view.backgroundColor = [UIColor blackColor];
+    mineViewController.tabBarItem.title = @"我的";
     
     UITabBarController *tabbarController = [[UITabBarController alloc] init];
-    [tabbarController setViewControllers:@[viewController,videoController,recommendController,controller4]];
+    [tabbarController setViewControllers:@[viewController,videoController,recommendController,mineViewController]];
     tabbarController.delegate = self;
     
     UINavigationController *navigationController =[[UINavigationController alloc] initWithRootViewController:tabbarController];
