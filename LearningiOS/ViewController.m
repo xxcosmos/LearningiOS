@@ -12,6 +12,8 @@
 #import "GTDeleteButtonView.h"
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate,GTNormalTableViewCellDelegate>
+@property(nonatomic, strong, readwrite)UITableView *tableView;
+@property(nonatomic, strong, readwrite)NSMutableArray *dataArray;
 
 @end
 
@@ -20,6 +22,10 @@
 {
     self = [super init];
     if (self) {
+        _dataArray = @[].mutableCopy;
+        for (int i = 0; i<20; i++) {
+            [_dataArray addObject:@(i)];
+        }
         self.tabBarItem.title = @"新闻";
         self.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/page@2x.png"];
         self.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/page.png"];
@@ -31,10 +37,10 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:tableView];
-    tableView.dataSource = self;
-    tableView.delegate = self;
+    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:_tableView];
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
     
     //    UIView *view = [[UIView alloc] init];
     //    view.backgroundColor = [UIColor greenColor];
@@ -76,55 +82,26 @@
 - (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton {
     GTDeleteButtonView *deleteButtonView = [[GTDeleteButtonView alloc] initWithFrame:self.view.bounds];
     CGRect rect = [tableViewCell convertRect:deleteButton.frame toView:nil];
+    //循环引用
+    __weak typeof (self) wself = self;
     [deleteButtonView showDeleteViewFromPoint:rect.origin clickBlock:^{
-        NSLog(@"d");
+        __strong typeof (self)strongSelf = wself;
+        [strongSelf.dataArray removeLastObject];
+        [strongSelf.tableView deleteRowsAtIndexPaths:@[[strongSelf.tableView indexPathForCell:tableViewCell]] withRowAnimation:UITableViewRowAnimationAutomatic];
     }];
 }
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return _dataArray.count;
 }
 
-- (void)encodeWithCoder:(nonnull NSCoder *)coder {
-}
-
-- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection {
-    
-}
-
-- (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-    
-}
 
 - (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
     return CGSizeMake(20, 20);
-}
-
-- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-    
-}
-
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-    
-}
-
-- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-    
-}
-
-- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator {
-    
-}
-
-- (void)setNeedsFocusUpdate {
-    
 }
 
 - (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context {
     return true;
 }
 
-- (void)updateFocusIfNeeded {
-    
-}
 
 @end
